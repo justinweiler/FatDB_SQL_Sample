@@ -1,0 +1,34 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:FatDB_SQL_SampleDataSetTableAdapters="clr-namespace:FatDB_SQL_Sample.FatDB_SQL_SampleDataSetTableAdapters" mc:Ignorable="d" x:Class="FatDB_SQL_Sample.MainWindow"
+        Title="Using FatDB with SQL Example" Height="600" Width="1424" Background="White">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical" Height="566" VerticalAlignment="Top">
+            <DataGrid x:Name="sqlGrid" Height="500" Width="700" Loaded="sqlGrid_Loaded" VerticalAlignment="Top">
+                <DataGrid.DataContext>
+                    <FatDB_SQL_SampleDataSetTableAdapters:ProductTableAdapter/>
+                </DataGrid.DataContext>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Image Source="sql.png" Height="52" Width="100"/>
+                <Button FontFamily="Graphik SemiBold" FontSize="18" Margin="3" Height="40" Foreground="#FF294FCC" Name="sqlGridRefresh" Click="sqlGridRefresh_Click">Refresh</Button>
+                <Button FontFamily="Graphik SemiBold" FontSize="18" Margin="3" Height="40" Foreground="#FF294FCC" Name="sqlGridUpdate" Click="sqlGridUpdate_Click">Update</Button>
+                <Button FontFamily="Graphik SemiBold" FontSize="18" Margin="3" Height="40" Foreground="#FF294FCC" Name="sqlGridQuery" Click="sqlGridQuery_Click">Query</Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Height="566" VerticalAlignment="Top">
+            <DataGrid x:Name="fatdbGrid" Margin="10,0,0,0" Height="500" Width="700" Loaded="fatdbGrid_Loaded" VerticalAlignment="Top">
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Image Source="fatdb.png" Margin="30,0,0,0"/>
+                <Button FontFamily="Graphik SemiBold" FontSize="18" Margin="3" Height="40" Foreground="#FF294FCC" Name="fatdbGridRefresh" Click="fatdbGridRefresh_Click">Refresh</Button>
+                <Button FontFamily="Graphik SemiBold" FontSize="18" Margin="3" Height="40" Foreground="#FF294FCC" Name="fatdbGridUpdate" Click="fatdbGridUpdate_Click">Update</Button>
+                <Button FontFamily="Graphik SemiBold" FontSize="18" Margin="3" Height="40" Foreground="Gray" Name="fatdbGridCache" Click="fatdbGridCache_Click" IsEnabled="False">Cache</Button>
+                <Button FontFamily="Graphik SemiBold" FontSize="18" Margin="3" Height="40" Foreground="#FF294FCC" Name="fatdbGridQuery" Click="fatdbGridQuery_Click">Query</Button>
+                <RadioButton FontFamily="Graphik SemiBold" FontSize="18" Margin="10,0,0,0" Foreground="#FF294FCC" Name="fatdb_cache" Content="View Cache" VerticalAlignment="Center" HorizontalAlignment="Left" Click="fatdb_cache_Click"/>
+                <RadioButton FontFamily="Graphik SemiBold" FontSize="18" Margin="10,0,0,0" Foreground="#FF294FCC" Name="fatdb_db" Content="View DB" VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked="True" Click="fatdb_db_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>
