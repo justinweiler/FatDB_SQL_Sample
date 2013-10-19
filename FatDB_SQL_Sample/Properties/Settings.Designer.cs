@@ -26,8 +26,8 @@ namespace FatDB_SQL_Sample.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JRWMBP\\SQLEXPRESS;Initial Catalog=FatDB_SQL_Sample;Integrated Securit" +
-            "y=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=108.168.251.27;Initial Catalog=FatDB_SQL_Sample;User ID=fatdbuser;Pas" +
+            "sword=fatdb123;Integrated Security=False")]
         public string FatDB_SQL_SampleConnectionString {
             get {
                 return ((string)(this["FatDB_SQL_SampleConnectionString"]));
